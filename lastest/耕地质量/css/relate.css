@@ -1,0 +1,62 @@
+/*
+* @Author: jiayi
+* @Date:   2017-11-04 13:04:22
+* @Last Modified by:   嘉怡吖
+* @Last Modified time: 2017-11-18 16:46:18
+*/
+
+
+
+.btn{
+	min-width: 95px;
+}
+.run{
+	padding: 20px;
+	*line-height: 30px;
+}
+.run p{
+    border-bottom: 1px dashed grey;
+    font-size: 1.8rem;
+}
+
+.my-btn{
+	font-size: 1.5rem;
+	width: 70%;
+}
+
+.btn-group label{
+	display: inline-block;
+	font-size: 1.6rem;
+}
+
+table th,table td{
+	vertical-align:middle;
+	text-align:center;
+}
+.cause-select{
+	height: 50px;
+	margin:30px 0;
+}
+.cause{
+	width: 66.66% !important;
+}
+
+.cause-table{
+    width: 100%;
+    margin: 0 10px;
+    background-color: rgba(255,255,255,0.7);
+}
+
+.cause-table-text{
+	border-radius: 10px;
+    font-size: 1.7rem;
+    box-shadow: 5px 5px 10px grey;
+}
+.cause-table-line{
+	background-image: url(../image/tableline.jpg); 
+    background-size: 100% 100%;
+    min-width: 85px;
+}
+.inner-table{
+	width: 100%;
+}

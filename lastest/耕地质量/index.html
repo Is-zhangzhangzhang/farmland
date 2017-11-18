@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>耕地质量综合管理平台</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="./plugin/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="plugin/font-awesome/css/font-awesome.min.css">
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="./plugin/bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script src="http://mockjs.com/dist/mock.js"></script>
+</head>
+<body>
+    <!-- 给背景图加颜色图层 -->
+    <!-- <div class="wrap"></div>  -->
+    <div class="header">
+       <div class="header-item">
+       		<div class="logo">
+    			<h2>耕地质量综合管理平台</h2>
+    		</div>
+       </div>
+    </div>
+
+  <div class="wrap">
+    <!-- 侧边栏 -->
+	<div class="sidebar">
+	    <div class="nav">
+            <div class="logo-img">
+                <img src="image/logo.jpg" alt="">
+            </div>
+	        <!-- 导航栏 -->
+	    	<ul class="nav-ul">
+			<li>
+				<div class="nav-ul-div activecolor">
+				   <span><i class="fa fa-folder-open-o"></i></span>
+				   <a href="#">数据管理</a>
+				   <i class="toggle-i fa fa-chevron-right"></i>
+				</div>
+				<ul class="div-inner-ul">
+					<li id="data-in"><i class="fa fa-caret-right"></i><a href="#">数据导入</a></li>
+					<li id="data-out"><i class="fa fa-caret-right"></i><a href="#">数据导出</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="nav-ul-div">
+                  <span><i class="fa fa-commenting-o"></i></span>
+				  <a href="#">耕地质量评价知识挖掘</a>
+				   <i class="toggle-i fa fa-chevron-right"></i>
+				</div>
+				 <ul class="div-inner-ul">
+					<li id="fair"><i class="fa fa-caret-right"></i><a href="#">耕地质量评价合理性知识挖掘</a></li>
+					<li id="relate"><i class="fa fa-caret-right"></i><a href="#">耕地质量评价关联性知识挖掘</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="nav-ul-div">
+				  <span><i class="fa fa-bar-chart"></i></span>
+				  <a href="#"> 耕地质量时空变化趋势分析</a>
+				  <i class="toggle-i fa fa-chevron-right"></i>
+				</div>
+				<ul class="div-inner-ul">
+					<li id="space"><i class="fa fa-caret-right"></i><a href="#">耕地质量空间分布特征分析</a></li>
+					<li id="schange"><i class="fa fa-caret-right"></i><a href="#">耕地质量时空演变特征挖掘</a></li>
+					<li id="srelate"><i class="fa fa-caret-right"></i><a href="#">耕地质量时空演变与因素关联性分析</a></li>
+				</ul>
+			</li>
+            <li>
+				<div class="nav-ul-div">
+				  <span><i class="fa fa-thumbs-o-up"></i></span>
+				  <a href="#">耕地质量评价模型优化</a>
+				  <i class="toggle-i fa fa-chevron-right"></i>
+				</div>
+				<ul class="div-inner-ul">
+					<li id="eselect"><i class="fa fa-caret-right"></i><a href="#">耕地质量评价因素筛选</a></li>
+					<li id="esure"><i class="fa fa-caret-right"></i><a href="#">耕地质量评价权重确定</a></li>
+					<li id="egrade"><i class="fa fa-caret-right"></i><a href="#">耕地质量等别划分</a></li>
+				</ul>
+			</li>
+		</ul>
+	    </div>
+	</div>
+         
+        <!-- mainright -->
+    	<div class="content">
+	            <ul id="getbread" class="breadcrumb bread">
+	            	<li><a href="#">耕地质量评价知识挖掘</a> <span class="divider"></span></li>
+				    <li><a href="#">耕地质量评价关联性知识挖掘</a> <span class="divider"></span></li>
+	            </ul>
+    	    	<div class="container mainwrap" id="comment-relate">
+    	    	
+				</div>
+		</div>
+    <script src="js/index.js"></script>
+    <!-- <script src="js/relate.js"></script> -->
+</body>
+</html>
