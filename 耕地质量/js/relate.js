@@ -2,15 +2,15 @@
 * @Author: jiayi
 * @Date:   2017-11-04 12:23:39
 * @Last Modified by:   嘉怡吖
-* @Last Modified time: 2017-11-18 14:31:09
+* @Last Modified time: 2017-11-21 19:56:18
 */
 jQuery(document).ready(function($) {
 	//点击运行 执行算法 成功后获得path
 $("#FPG-execute").click(function(event) {
     $.ajax({
-        url: '/algorithm/FPG.do',
-        type: 'GET',
-        dataType: 'json',
+        url: 'http://111.230.226.150/algorithm/FPG.do',
+        type: 'POST',
+        dataType: 'jsonp',
         async : true,
         success:function(path)
         {
@@ -35,10 +35,10 @@ $("#FPG-execute").click(function(event) {
 //轮询检测算法是否完成
 function polling(path){
     $.ajax({
-        url: '/data/checkFPG.do',
+        url: 'http://111.230.226.150/data/checkFPG.do',
         type: 'POST',
         async : true,
-        dataType: 'json',
+        dataType: 'jsonp',
         data: {path: path},
         success:function(result)
         {
@@ -80,10 +80,10 @@ function addOption(result,id)
 function getYS1(){
 //$("#sel-ys1").click(function(event) {
     $.ajax({
-        url: '/data/getYS1.do',
-        type: 'GET',
+        url: 'http://111.230.226.150/data/getYS1.do',
+        type: 'POST',
         async : true,
-        dataType: 'json',
+        dataType: 'jsonp',
         success: function(result) {
             //result因素一的数组 成功后插入元素
              if(!result.status)
@@ -101,33 +101,28 @@ function getYS1(){
     })
 };
 
-
 //获得因素一下拉框中选择的内容dataYS1
 //option改变的时候才能post值，不变的时候没有值post！！！！
-$("#sel-sy1").change(function(event){
-    YS1 = $("#sel-sy1 option:selected").text();
-    getSY2(YS1);
+$("#sel-ys1").change(function(event){
+     var YS1 = $("#sel-ys1 option:selected").text();
+     getSY2(YS1);
 })
+
 
 function getSY2(YS1){
     $.ajax({
-        url: '/data/getYS2.do',
+        url: 'http://111.230.226.150/data/getYS2.do',
         type: 'POST',
         async : true,
-        dataType: 'json',
+        dataType: 'jsonp',
         data: {YS1: YS1},
         //result 因素二数组
         success:function(result)
         {
             if(!result.status)
              {
-                for (var index in result.data)
-                {
-                    var sel =  $('#sel-ys2');
-                    var opt = document.createElement('option');
-                    opt.innerHTML=result.data[index];
-                    sel.append(opt);
-                }
+                $('#sel-ys2').html('<option selected="true" disabled="true" value="0">请选择</option>');
+                addOption(result,"#sel-ys2");
              }
              else{
                   alert(result.msg);
@@ -135,17 +130,17 @@ function getSY2(YS1){
 
              //若含有与因素一相同的内容则不能再选 
             $("#sel-ys2 option").each(function() {
-
                 var unClick = $(this).text();
-                if (dataYS1 == unClick) 
+                if (YS1 == unClick) 
                 {
-                    $(this).attr('disabled', 'disable');
+                    $(this).attr('disabled', 'true');
                 }   
              })
 
             //请求因素二
-            $("#sel-sy2").change(function(event){
-                YS2 = $("#sel-sy1 option:selected").text();
+            $("#sel-ys2").change(function(event){
+                console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                YS2 = $("#sel-ys2 option:selected").text();
                 setTable(YS1,YS2);
             })
 
@@ -157,13 +152,13 @@ function getSY2(YS1){
     })
 }
 
-function setTable(){
+function setTable(YS1,YS2){
     $.ajax(
         {
-            url:'/data/getYsglTable.do',
+            url:'http://111.230.226.150/data/getYsglTable.do',
             type: 'POST',
             async : true,
-            dataType:'json',
+            dataType:'jsonp',
             data: {
                 YS1: YS1,
                 YS2: YS2
@@ -188,12 +183,13 @@ function setTable(){
 
 function createTable(result)
 {
-    var i,j;
+        var i,j;
         var rTable = document.getElementById("relate-table");
-        for (i in result)
+        rTable.innerHTML="";
+        for (i in result.data)
         {   
-             var tr = rTable.insertRow(i);
-            for(j in result[i])
+            var tr = rTable.insertRow(i);
+            for(j in result.data[i])
             {
                 var td = tr.insertCell(j);
                 if(i == 0 && j==0)
@@ -213,7 +209,7 @@ function createTable(result)
                 }
                 else
                 {
-                    td.innerHTML=result[i][j];
+                    td.innerHTML=result.data[i][j];
                 }
             }
         }

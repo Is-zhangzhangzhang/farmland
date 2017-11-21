@@ -2,7 +2,7 @@
 * @Author: jiayi
 * @Date:   2017-10-28 21:58:27
 * @Last Modified by:   嘉怡吖
-* @Last Modified time: 2017-11-04 17:42:39
+* @Last Modified time: 2017-11-18 18:05:59
 */
 
 jQuery(document).ready(function($) {
@@ -39,7 +39,7 @@ $(".div-inner-ul li").click(function(event) {
     $(".div-inner-ul li").click(function(event) {
         var id=$(this).attr("id");
         var path="../page/" + id +".html";
-        console.log(path);
+        setBread(id);
          $.ajax({
              url: path,
              cache: false,
@@ -53,6 +53,19 @@ $(".div-inner-ul li").click(function(event) {
     });
 
 //点击主界面显示
-
+   
+//面包屑Js  
+ function setBread(id)
+ {
+    $('#getbread').html('');
+    id = "#"+ id;
+    first = $(id).parent().siblings('.nav-ul-div').find('a').text();
+    second = $(id).text();
+    $('#getbread').html('<li>'+
+        '<a href="#">'+first+'</a>'+
+        '<span class="divider"></span></li>'+
+        '<li><a href="#">'+second+'</a>'+
+        '<span class="divider"></span></li>');
+}
 
 });

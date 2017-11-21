@@ -2,7 +2,7 @@
 * @Author: 嘉怡吖
 * @Date:   2017-11-09 17:45:32
 * @Last Modified by:   嘉怡吖
-* @Last Modified time: 2017-11-13 22:19:28
+* @Last Modified time: 2017-11-18 15:32:11
 */
 
 // Mock.mock('/FruitTree/LoadYear',
@@ -77,7 +77,7 @@ Mock.mock('/FruitTree/LoadJson',
 Mock.mock('/data/getYS1.do',{
 			"status": 0,
 			"data":[
-			"TRSJD"
+			"TRSJD","DXPD"
 			]
 		}
 );

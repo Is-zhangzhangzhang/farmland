@@ -2,7 +2,7 @@
 * @Author: jiayi
 * @Date:   2017-11-04 13:04:22
 * @Last Modified by:   嘉怡吖
-* @Last Modified time: 2017-11-04 16:23:07
+* @Last Modified time: 2017-11-18 16:46:18
 */
 
 
@@ -54,10 +54,8 @@ table th,table td{
 }
 .cause-table-line{
 	background-image: url(../image/tableline.jpg); 
-    background-size: 100% 100%;  
-}
-.cause-table > th{
-    width: 33.33%;
+    background-size: 100% 100%;
+    min-width: 85px;
 }
 .inner-table{
 	width: 100%;
