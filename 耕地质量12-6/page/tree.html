@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../plugin/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../plugin/zTree/css/zTreeStyle/zTreeStyle.css">
+	<link rel="stylesheet" href="../css/tree.css">
+	<script src="http://mockjs.com/dist/mock.js"></script>
+	<title>tree</title>
+</head>
+<body>
+<div>
+	
+</div>
+<div class="wrap">
+     <!--范围选择-->
+    <div class="aChoose btn-group form-group form-inline">
+    	<h4 class="areaH4">范围选择</h4>
+        <div class="sel-year">
+        	<label>年份:</label>
+	 		<select id="select-year" class="rankSelect form-control">
+	 			<option selected="true" disabled="true" value="0">请选择</option>
+	 		</select>
+        </div>
+
+        <div class="sel-type">
+        	<label>类型:</label>
+	 		<select id="select-type" class="rankSelect form-control">
+	 			<option selected="true" disabled="true" value="0">请选择</option>
+	 		</select>
+        </div>
+
+        <div class="prov">
+        	<label>省/市:</label>
+	 		<select id="select-prov" class="rankSelect form-control">
+	 			<option selected="true" disabled="true" value="0">请选择</option>
+	 		</select>
+        </div>
+
+        <div class="district">
+        	<label>区/县:</label>
+	 		<select id="select-dist" class="rankSelect form-control">
+	 			<option selected="true" disabled="true" value="0">请选择</option>
+	 		</select>
+        </div>  	
+    </div>
+
+	<div class="treewrap">
+		<h4 class="findH4">关键字查找</h4>
+		<ul id="treeView" class="ztree"></ul>
+	</div>
+</div>
+
+
+    <!-- jQuery -->
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <!-- zTree -->
+	<script src="../plugin/zTree/js/jquery.ztree.core.js"></script>
+	<!-- moock -->
+	<script type="text/javascript" src="../js/mockTest.js"></script>
+    <!-- Tree -->
+ 	<script src="../js/tree.js"></script>
+</body>
+</html>
